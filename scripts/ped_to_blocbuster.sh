@@ -11,5 +11,7 @@ paste -d'\t' $plink_tmp.txt $out > tmp & mv tmp $out
 
 # Adding line for SNPs
 echo indiv `cut -f2 $plink.map` > $plink_tmp.txt
+tr ' ' '\t' < $plink_tmp.txt > tmp && mv tmp $plink_tmp.txt
+
 cat $plink_tmp.txt $out > tmp && mv tmp $out
 rm $plink_tmp.txt
