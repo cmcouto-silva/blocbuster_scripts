@@ -7,7 +7,7 @@ cut -d' ' -f7- $plink.ped | sed "s/ //g" | sed "s/.\{2\}/&\t/g" > $out
 
 # Adding column for individuals
 cut -d' ' -f2 $plink.ped > $plink_tmp.txt
-paste -d'\t' $plink_tmp.txt $out > tmp & mv tmp $out
+paste -d'\t' $plink_tmp.txt $out > tmp && mv tmp $out
 
 # Adding line for SNPs
 echo indiv `cut -f2 $plink.map` > $plink_tmp.txt
